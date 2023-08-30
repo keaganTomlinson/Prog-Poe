@@ -1,0 +1,51 @@
+﻿@model Product
+
+<h1>Edit Product</h1>
+
+<form method="post" action="@Url.Action("Edit")">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Quantity">Quantity:</label>
+        <input type="number" asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+    <label asp-for="Quantity">Quantity:</label>
+    <input type="number" asp-for="Quantity" class="form-control" />
+    <span asp-validation-for="Quantity" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Type">Type:</label>
+    <select asp-for="Type" class="form-control">
+        <option value="">-- Select Type --</option>
+        <option value="Incoming">Incoming</option>
+        <option value="Outgoing">Outgoing</option>
+    </select>
+    <span asp-validation-for="Type" class="text-danger"></span>
+</div>
+
+    <div class="form-group">
+        <label asp-for="DateExpected">Date Expected:</label>
+        <input type="date" id="DateExpected" asp-for="DateExpected" class="form-control" value=m.DateExpected />
+        <span asp-validation-for="DateExpected" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>
